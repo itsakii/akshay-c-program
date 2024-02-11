@@ -13,13 +13,12 @@ void print(int n) {
     cout << n << endl;
 }
 
-int main() {
 
+int main() {
     int n;
     cin >> n;
     cout << endl;
     print(n);
-
 
     return 0;
 }
