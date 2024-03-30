@@ -1,31 +1,24 @@
 #include<iostream>
+#include<stack>
 using namespace std;
+int main () {
+    string str = "babbar";
 
-void reverse(string& str, int i, int j ) {
+    stack<char> s;
+    for (int i = 0; i<str.length(); i++) {
+        char ch = str[i];
+        s.push(ch);
+    }
 
-    cout << "call recieved for " << str << endl;
+    string ans = "";
 
+    while(!s.empty()) {
+        char ch = s.top();
+        ans.push_back(ch);
+        s.pop();
+    }
 
-
-    if(i>j)
-        return ;
-
-    swap(str[i], str[j]);
-    i++;
-    j--;
-
-
-    reverse(str,i,j);
-
-}
-
-int main() {
-
-    string name = "abcde";
-    cout << endl;
-    reverse(name, 0 , name.length()-1 );
-    cout << endl;
-    cout << name << endl;
+    cout << "answer is: "<< ans << endl;
 
     return 0;
 }
